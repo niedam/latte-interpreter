@@ -1,0 +1,7 @@
+int test(int t) {
+     return t;
+}
+
+int main() {
+     return test("Adam");
+}

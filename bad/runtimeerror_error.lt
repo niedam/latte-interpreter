@@ -1,0 +1,5 @@
+# kontrolowany błąd
+int main() {
+     error();
+     return 0;
+}

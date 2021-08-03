@@ -1,0 +1,18 @@
+int main() {
+     int x(int i) {
+          if (i > 0) {
+               x(i - 1);
+          } else {
+               return 3;
+          }
+     }
+
+     int(int) y = int <- (int i) {
+          if (i > 0) {
+               y(i - 1); // y nie jest widoczne
+          } else {
+               return 3;
+          }
+     };
+     return 0;
+}

@@ -1,0 +1,23 @@
+int main() {
+     # Trzy typy.
+     int i;
+     string s;
+     boolean b;
+
+     # Przypisania.
+     i = 4;
+     s = "Latte";
+     b = true;
+
+     # Zmienne zainicjalizowane.
+     int j = 49;
+     string t = "zainicjalizowany";
+     boolean c = false;
+
+     # Kilka zmiennych na raz.
+     int k = 3, l = 4, m = 5;
+     string u = "A", w = "d", x = "a", y = "z";
+     boolean d = true, e = false;
+
+     return 0;
+}

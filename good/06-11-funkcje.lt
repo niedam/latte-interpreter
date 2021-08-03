@@ -1,0 +1,29 @@
+string slowo() {
+     return "Słowo";
+}
+
+int getRandomNumber() {
+     return 4; // chosen by fair dice roll.
+               // guaranteed to be random.
+}
+
+boolean logiczna() {
+     return true;
+}
+
+void nic() {}
+
+void cosAleNic() {
+     int i;
+     i++;
+}
+
+int main() {
+     nic();
+     cosAleNic();
+     int i = getRandomNumber();
+     if (!logiczna()) error();
+     return 0;
+}
+     
+

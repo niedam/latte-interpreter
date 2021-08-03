@@ -1,0 +1,53 @@
+int nwd(int a, int b) {
+     if (b == 0)
+          return a;
+     else
+          return nwd(b, a % b);
+}
+
+int factr (int n) {
+  if (n < 2)
+    return 1 ;
+  else
+    return (n * factr(n-1)) ;
+}
+
+int binomialCoefficient(int n, int k) {
+     if (n <= 0 || k <= 0 || n < k)
+          return 0;
+     if (k == 1 || n == k)
+          return 1;
+     return binomialCoefficient(n - 1, k) + binomialCoefficient(n - 1, k - 1);
+}
+
+int main() {
+     if (nwd(10, 5) != 5) error();
+     if (nwd(1071, 462) != 21) error();
+     if (factr(4) != 24) error();
+     if (factr(7) != 5040) error();
+     int t = factr(10);
+     printInt(t);
+     if (t != 3628800) error();
+     int t = factr(15);
+     printInt(t);
+     if (t != 1307674368000) error();
+     if (binomialCoefficient(1, 1) != 1) error();
+     if (binomialCoefficient(2, 1) != 1) error();
+     if (binomialCoefficient(2, 2) != 1) error();
+     if (binomialCoefficient(3, 1) != 1) error();
+     if (binomialCoefficient(3, 2) != 2) error();
+     if (binomialCoefficient(3, 3) != 1) error();
+     if (binomialCoefficient(4, 1) != 1) error();
+     if (binomialCoefficient(4, 2) != 3) error();
+     if (binomialCoefficient(4, 3) != 3) error();
+     if (binomialCoefficient(4, 4) != 1) error();
+     if (binomialCoefficient(5, 1) != 1) error();
+     if (binomialCoefficient(5, 2) != 4) error();
+     if (binomialCoefficient(5, 3) != 6) error();
+     if (binomialCoefficient(5, 4) != 4) error();
+     if (binomialCoefficient(5, 5) != 1) error();
+     if (binomialCoefficient(5, 10) != 0) error();
+     if (binomialCoefficient(5, -3) != 0) error();
+     if (binomialCoefficient(-5, 1) != 0) error();
+     return 0;
+}

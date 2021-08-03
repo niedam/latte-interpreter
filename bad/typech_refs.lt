@@ -1,0 +1,4 @@
+int main() {
+     int(int&) t = int <- (int& k) { return k; };
+     t(3);
+}

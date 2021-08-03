@@ -1,0 +1,8 @@
+void test() {
+     return 4;
+     return;
+}
+
+int main() {
+     return 0;
+}

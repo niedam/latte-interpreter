@@ -1,0 +1,16 @@
+int main() {
+     int x = 3;
+     int test(int a, int b, int x, string s) {
+          if (x == 3) error();
+          return a + b + x;
+     }
+     test(1,2, 5, "kot");
+     printString("tu\n");
+     int(int, string) test2 = int <- (int x, string k) { 
+          if (x == 3)
+               error();
+          return x; 
+     };
+     test2(5, "kot");
+     return 0;
+}

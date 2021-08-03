@@ -1,0 +1,48 @@
+int main() {
+     int i = 1;
+     # Test porównań.
+     if (3 < i || i > 3 || 3 <= i || i >= 3)
+          error();
+     if (3 < 2 || 2 > 3 || 3 <= 2 || 2 >= 3)
+          error();
+     # Test równości.
+     if (1 != 1)
+          error();
+     if (i != 1)
+          error();
+     # Test artmetyki.
+     if (1 + 2 != 3)
+          error();
+     if (3 - 2 != 1)
+          error();
+     if (3 * 2 != 6)
+          error();
+     if (10 / 2 != 5)
+          error();
+     if (i * 0 != 0)
+          error();
+     if (4 % 2 != 0)
+          error();
+     if (4 % 3 != 1)
+          error();
+     if (i != 1) error();
+     i++;
+     if (i != 2) error();
+     i--;
+     if (i != 1) error();
+     if (-i != -1) error();
+
+     # Test wyrażeń logicznych.
+     if (true && false) error();
+     if (false || false) error();
+     if (false && false) error();
+     if (!true) error();
+	boolean b = false || true;
+	if (!b) error();
+	b = true && true;
+	if (!b) error();
+	int big = 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+	big++;
+	if  (big % 10 != 0) error();
+     return 0;
+}

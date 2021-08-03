@@ -1,0 +1,4 @@
+int main() {
+     if (true) if (false) error(); else return 0;
+     return 1;
+}

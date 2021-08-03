@@ -1,0 +1,39 @@
+void test2() {
+     int j = 4+3;
+     printString("kot");
+}
+
+int test() {
+     int j = 100;
+
+     void tttt() {
+          j++;
+     }
+
+     void ssss() {
+          j = j + 2;
+          void kkkk() {
+               tttt();
+               j--;
+               void tttt() {}
+               tttt();
+          }
+          kkkk();
+     }
+
+     int uuuu() {
+          j = j + 3;
+          return 0;
+     }
+
+     tttt();
+     ssss();
+     uuuu();
+     return j;
+}
+
+int main() {
+     if (test() != 106) error();
+     test2();
+     return 0;
+}

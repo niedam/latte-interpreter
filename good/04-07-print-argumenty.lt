@@ -1,0 +1,26 @@
+void testLambda(){
+
+    void fabrykaLicznikow(int() &l, int s){
+        int x = s;
+        l = (int <- () {
+        printString("Inc licznik ");
+            x++;
+            return x;
+        });
+    }
+
+    int() licznik;
+    fabrykaLicznikow(&licznik, 0);
+
+
+    printInt(licznik());
+    printInt(licznik());
+
+
+}
+
+int main() {
+printString("Test Lambda: \n");
+testLambda();
+return 0;
+}

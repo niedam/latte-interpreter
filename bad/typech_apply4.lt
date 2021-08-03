@@ -1,0 +1,11 @@
+int test(int(int()) t) {
+     int() i = int <- () { return 0; };
+     return t(i);
+}
+
+int main() {
+     int f(int j) {
+          return 0;
+     }
+     return test(f);
+}

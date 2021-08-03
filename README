@@ -1,0 +1,61 @@
+Interpreter Latte.
+
+Z lambdami. Czyli bardziej takie Lamb-tte.
+Z kontrolą typów zamiast zadeklarowanych wcześniej tablic i krotek.
+Z przekazywaniem zmiennych do funkcji przez wartość i referencje. 
+Pominąłem konkatenację stringów.
+
+W gramatyce występuje jeden konflikt (shift/reduce) przy instrukcji if (obecny w oryginalnej gramatyce).
+Instrukcja else będzie się wiązała z najbliższym ifem (plik good/05-konflikt.lt).
+
+
+Sposób uruchomienia (na students):
+
+1. export PATH=/home/students/inf/PUBLIC/MRJP/bin:$PATH
+
+2. make
+
+Poza komputerem `students` (MIMUW) wymagane jest oprogramowanie: bnfc, happy, alex
+
+Powstanie plik wykonywalny `latte`.
+Dołączyłem także prosty skrypt `test.sh` (lub `make test`), który testuje programy z folderów `good` i `bad`.
+Skrypt pomija pliki *.ltin, które wczytują dane ze stdin.
+Skrypt wypisuje te pliki, których kod wyjścia był inny niż spodziewany (dla good spodziewa się 0, a dla bad 1).
+
+W make jest także opcja clean, która kasuje pliki powstałe w trakcie budowania rozwiązania (oprócz plików z kompilacji kodu w Haskellu, także parser, lekser i inne pliki z BNFC).
+
+=== WERSJA 2 ===
+
+1. Zmieniłem reprezentację stanu w RunTime.hs. Teraz w stanie przechowywany jest licznik następnej wolnej lokacji,
+co znacząco upraszcza przepływ danych w funkcji doStart (według zaleceń pani Darii Walukiewicz-Chrząszcz).
+2. Umieszczenie wszystkich plików w folderze `adam_rozenek`, żeby spełnić formalne kryteria zadania (według zalecenia pana Michała Skrzypczaka).
+
+=== WERSJA 2.1 ===
+
+1. Poprawiłem błąd związany z podwójną ewaluacją argumentów we wbudowanych funkcjach printInt, printString (wykryty przez panią Darię Walukiewicz-Chrząszcz).
+
+
+Zakutalizowana tabelka:
+  Na 15 punktów
+  01 (trzy typy) +
+  02 (literały, arytmetyka, porównania) +
+  03 (zmienne, przypisanie) +
+  04 (print) +
+  05 (while, if) +
+  06 (funkcje, rekurencja) +
+  07 (przez zmienną / przez wartość) +
+  08 (zmienne read-only i pętla for)
+  Na 20 punktów
+  09 (przesłanianie i statyczne wiązanie) +
+  10 (obsługa błędów wykonania) +
+  11 (funkcje zwracające wartość) +
+  Na 30 punktów
+  12 (4) (statyczne typowanie) +
+  13 (2) (funkcje zagnieżdżone ze statycznym wiązaniem) +
+  14 (1) (rekordy/tablice/listy)
+  15 (2) (krotki z przypisaniem)
+  16 (1) (break, continue) +
+  17 (4) (funkcje wyższego rzędu, anonimowe, domknięcia) +
+  18 (3) (generatory)
+
+Razem: 30

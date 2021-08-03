@@ -1,0 +1,10 @@
+int test(int(int) t) {
+     return t();
+}
+
+int main() {
+     int f(int j) {
+          return 0;
+     }
+     return test(f);
+}

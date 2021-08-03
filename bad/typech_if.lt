@@ -1,0 +1,6 @@
+int main() {
+     if (2 + 2) {
+          error();
+     }
+     return 0;
+}

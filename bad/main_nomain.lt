@@ -1,0 +1,3 @@
+int kot() {
+     return 3;
+}

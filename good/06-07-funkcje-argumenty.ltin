@@ -1,0 +1,55 @@
+void multiplicator(int& i, int j) {
+     i = i * j;
+}
+
+void loadString(string& s) {
+     s = readString();
+}
+
+void printStringN(string& s, int n, boolean czyFakt) {
+     int i = 0;
+     if (czyFakt) {
+          printString("Faktem jest:\n");
+     }
+     while (i < n) {
+          printString(s);
+          printString("\n");
+          i++;
+     }
+}
+
+void negujFakt(boolean& fakt) {
+     fakt = ! fakt;
+}
+
+void innerRef(int n, int &r) {
+     if (n == 0) {
+          if (r != 6) error();
+          r = 9;
+     } else {
+          innerRef(n - 1, &r);
+     }
+}
+
+
+int main() {
+     int n = 3;
+     multiplicator(&n, 2);
+     if (n != 6) error();
+
+     boolean fakt = true;
+     negujFakt(&fakt);
+     if (fakt) error();
+     negujFakt(&fakt);
+     if (!fakt) error();
+
+     innerRef(10, &n);
+     if (n != 9) error();
+     
+     string s;
+     printString("Podaj słowo:\n");
+     loadString(&s);
+     printStringN(&s, n, fakt);
+     return 0;
+}
+     

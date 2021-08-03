@@ -1,0 +1,20 @@
+# Test statycznej kontroli returnów.
+int testIfow() {
+     if (true) {
+          return 3;
+     } else if (false) {
+          return 5;
+     } else {
+          return 9;
+     }
+}
+
+int main() {
+     int i = 0;
+     while (i < 10) {
+          i++;
+          if (i > 10) error();
+     }
+     if (i != 10) error();
+     return 0;
+}

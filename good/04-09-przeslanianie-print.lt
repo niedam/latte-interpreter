@@ -1,0 +1,13 @@
+int readInt() {
+     return 42;
+}
+
+int main() {
+     string() r = readString;
+     string readString() {
+          return "Halo halo\n";
+     }
+     if (readInt() != 42) error();
+     printString(readString());
+     return 0;
+}

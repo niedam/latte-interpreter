@@ -1,0 +1,8 @@
+string kot() {
+     return 3;
+}
+
+int main() {
+     string s = kot();
+     return 0;
+}

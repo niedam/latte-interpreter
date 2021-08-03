@@ -1,0 +1,12 @@
+int main() {
+     int n = 42;
+     printString("Give number:\n");
+     int d = readInt();
+     while (d != n) {
+          if (d < n) printString("Za mała.\n");
+          else printString("Za duża\n");
+          d = readInt();
+     }
+     printString("Zgadł_ś. Koniec programu.\n");
+     return 0;
+}

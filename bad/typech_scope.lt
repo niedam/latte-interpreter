@@ -1,0 +1,9 @@
+int main() {
+     string hello = "hello world";
+     
+     void test () {
+          printInt(hello);
+          return;
+     }
+     return 0;
+}

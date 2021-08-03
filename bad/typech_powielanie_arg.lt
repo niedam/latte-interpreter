@@ -1,0 +1,8 @@
+int x(int x, string x) {
+     return x;
+}
+
+
+int main() {
+     x(3, "Adam");
+}

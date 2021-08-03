@@ -1,0 +1,31 @@
+int main() {
+     int n = 3;
+     int(int) l1 = int <- (int i) { return i; };
+     if (n != l1(n)) error();
+     
+     void(string) l2 = void <- (string s) { printString(s); };
+     l2("adam\n");
+
+     int(int, int) l3 = int <- (int a, int b) { return a + b; };
+     if (l3(1,2) != 3) error();
+
+     boolean(int(int,int),int,int) l4 = boolean <- (int(int, int) t, int x, int y) { return t(x, y) >= 0; };
+     if (l4(l3, 1, -2)) { error(); }
+
+     int(int)(boolean) l5 = int(int) <- (boolean b) {
+          if (b)
+               return l1;
+          else
+               return int <- (int k) { return k + 1; }; 
+     };
+     int(int) l6 = l5(true);
+     if (l6(n) != n) error();
+     int(int) l7 = l5(false);
+     if (l7(n) != n + 1) error();
+
+     void() l8 = void <- () { printString("efekt uboczny\n"); };
+     l8();
+     return 0;
+}
+
+

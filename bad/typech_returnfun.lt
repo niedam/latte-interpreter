@@ -1,0 +1,11 @@
+int() funkcja() {
+     int fun(int i, int j) {
+          return 1;
+     }
+     return fun;
+}
+
+int main() {
+     int() f = funkcja();
+     return 0;
+}

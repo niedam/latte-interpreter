@@ -1,0 +1,9 @@
+int() funkcja() {
+     int(int) fun = int <- (int i) {return i;};
+     return fun;
+}
+
+int main() {
+     int() f = funkcja();
+     return 0;
+}

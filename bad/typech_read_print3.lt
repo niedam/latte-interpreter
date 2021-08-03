@@ -1,0 +1,4 @@
+int main() {
+     printInt("Adam");
+     return 0;
+}

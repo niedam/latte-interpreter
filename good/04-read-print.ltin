@@ -1,0 +1,9 @@
+int main() {
+     printString("Give number: ");
+     int i = readInt();
+     printInt(i);
+     string s = readString();
+     printString(s);
+     printString("\n");
+     return 0;
+}

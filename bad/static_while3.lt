@@ -1,0 +1,8 @@
+int main() {
+     string() f = string <- () {
+          while (true) continue;
+          break;
+          return "Adam";
+     };
+     return 0;
+}

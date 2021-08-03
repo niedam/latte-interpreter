@@ -1,0 +1,10 @@
+int main() {
+     while (true) {
+          int test() {
+               break;
+               return 0;
+          }
+          int j = test();
+     }
+     return 0;
+}

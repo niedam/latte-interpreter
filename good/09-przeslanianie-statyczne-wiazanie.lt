@@ -1,0 +1,40 @@
+int main() {
+     int k = 1;
+     int j = 4;
+     {
+          int k = 2;
+          j++;
+          {
+               int k = 3;
+               j++;
+               if (k != 3) error();    
+               if (j != 6) error();
+          }
+          j++;
+          if (k != 2) error();
+          if (j != 7) error();
+     }
+     j++;
+     if (k != 1) error();
+     if (j != 8) error();
+     test2();
+     return 0;
+}
+
+void test2() {
+     int f(int i) {
+          if (i > 0) {
+               i--;
+               return f(i);
+          }
+          return 0;
+     }
+     if (f(3) != 0) error();
+     int g = 49;
+     int() g = int <- () {
+          if (g != 49) error();
+          return g;
+     };
+     if (g() != 49) error();
+     return;
+}

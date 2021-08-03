@@ -1,0 +1,86 @@
+int(int) const(int c) {
+     return int <- (int x) { return c; };
+}
+
+int(int) operatorRoznicowy(int(int) fun) {
+     return int <- (int x) { return fun(x + 1) - fun(x); };
+}
+
+int(int) liniowa(int a, int b) {
+     return int <- (int x) { return a * x + b; };
+}
+
+int id(int x) {
+     return x;
+}
+
+int(int) abs(int(int) f) {
+     int result(int x) {
+          int r = f(x);
+          if (r >= 0)
+               return r;
+          return -r;
+     }
+     return result;
+}
+
+int main() {
+     int(int) stala5 = const(5);
+     
+     int(int) op1 = operatorRoznicowy(stala5);
+     int(int) op2 = operatorRoznicowy(id);
+     int(int) op3 = operatorRoznicowy(operatorRoznicowy(id));
+
+     if (op1(6) != 0) error();
+     if (op2(6) != 1) error();
+     if (op3(6) != 0) error();
+
+     stala5 = liniowa(0, 5);
+     op1 = operatorRoznicowy(stala5);
+
+     if (op1(6) != 0) error();
+
+     int(int) op4 = operatorRoznicowy(liniowa(11, 7));
+     if (op4(6) != 11) error();
+
+     int(int) op5 = operatorRoznicowy(abs(id));
+     if (op5(6) != 1 || op5(-6) != -1) error();
+
+     testBankowy();
+     return 0;
+}
+
+void kontoBankowe(void(int) &up, boolean(int) &down, int() &get) {
+     int stan = 0;
+     up = void <- (int x) { stan = stan + x; };
+     down = boolean <- (int x) {
+          if (x <= stan) {
+               stan = stan - x;
+               return true;
+          } else {
+               return false;
+          }
+     };
+     int getter() {
+          return stan;
+     }
+     get = getter;
+     return;
+}
+
+void testBankowy() {
+     void(int) up, up2;
+     boolean(int) down, down2;
+     int() get, get2;
+     kontoBankowe(&up, &down, &get);
+     up(100);
+     if (get() != 100) error();
+     down(1);
+     if (get() != 99) error();
+     kontoBankowe(&up2, &down2, &get2);
+     up2(55);
+     if (get() != 99 && get2() != 55) error();
+     down2(100);
+     if (get() != 99 && get2() != 55) error();
+}
+     

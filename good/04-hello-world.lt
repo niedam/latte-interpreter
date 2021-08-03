@@ -1,0 +1,5 @@
+int main() {
+     string hello_world = "hello world\n";
+     printString(hello_world);
+     return 0;
+}

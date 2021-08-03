@@ -1,0 +1,4 @@
+int main() {
+     int() f = int <- (int i) { return i; };
+     return f();
+}
